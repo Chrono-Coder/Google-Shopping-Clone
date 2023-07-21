@@ -61,21 +61,23 @@ export default async function Product({ params: { id } }: Props) {
 						<div className='flex flex-col justify-between'>
 							{productData.content.images?.full_size
 								.slice(1, 3)
-								.map((image) => (
+								.map((image, i) => (
 									<img
 										className='w-[9.5rem] h-[9.5rem] object-contain border rounded-md '
 										src={image}
 										alt=''
+										key={i}
 									/>
 								))}
 						</div>
 					</div>
 					<div className='space-x-6 flex overflow-y-auto py-2 md:w-[30rem]'>
-						{productData.content.images?.full_size.slice(3).map((image) => (
+						{productData.content.images?.full_size.slice(3).map((image, i) => (
 							<img
 								className='object-contain w-20 h-20 '
 								src={image}
 								alt=''
+								key={i}
 							/>
 						))}
 					</div>
@@ -116,8 +118,11 @@ export default async function Product({ params: { id } }: Props) {
 								<h3 className='text-2xl font-bold'>Product Highlights</h3>
 								<hr />
 								<ul className='space-y-2'>
-									{productData.content.highlights?.map((highlight) => (
-										<li className='text-base font-normal list-disc'>
+									{productData.content.highlights?.map((highlight, i) => (
+										<li
+											key={i}
+											className='text-base font-normal list-disc'
+										>
 											{highlight}
 										</li>
 									))}
@@ -157,7 +162,7 @@ export default async function Product({ params: { id } }: Props) {
 										></StarIcon>
 									))}
 								</div>
-								<p>"{productData.content.reviews.top_review.text}"</p>
+								<p>&quot{productData.content.reviews.top_review.text}&quot</p>
 							</div>
 						)}
 					</>

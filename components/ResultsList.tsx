@@ -26,6 +26,7 @@ export default function ResultsList({ results, term }: Props) {
 											prefetch={false}
 											className='underline'
 											href={`https:www.google.com${value.url}`}
+											key={value.value}
 										>
 											{value.value}
 										</Link>
@@ -51,7 +52,7 @@ export default function ResultsList({ results, term }: Props) {
 								</h2>
 							</div>
 							<h3 className='font-extralight'>
-								Showing results for "{decodeURIComponent(term)}"
+								Showing results for &quot;{decodeURIComponent(term)}&quot;
 							</h3>
 						</div>
 						{pageResult?.content?.results?.organic?.map((item) => (

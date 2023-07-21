@@ -1,12 +1,10 @@
-import Sidebar from '@/components/Sidebar';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
-	title: 'PC Component Scraper',
-	description: 'Amazon web-scraper to get PC Parts.',
+	title: 'Google Shops Clone',
+	description: 'Google Shops Web-scraper',
 };
 
 export default function RootLayout({
@@ -17,9 +15,6 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body>
-				{/* Sidebar */}
-				{/* <Sidebar /> */}
-
 				<main className=''>
 					<Header />
 					{children}

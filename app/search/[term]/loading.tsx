@@ -28,8 +28,11 @@ export default function Loading() {
 							Scraping Results Via Oxylabs!
 						</h2>
 					</div>
-					{[...Array(12)].map((_) => (
-						<div className='p-5 border rounded-2xl'>
+					{[...Array(12)].map((_, i) => (
+						<div
+							key={i}
+							className='p-5 border rounded-2xl'
+						>
 							<Skeleton count={2} />
 							<br />
 							<Skeleton count={1} />
